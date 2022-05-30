@@ -24,6 +24,7 @@ public class MainController {
 	
 	@GetMapping("/question")
 	public List<Question> showQuestion(){
+		
 		return questionRepo.findAll();
 	}
 	
