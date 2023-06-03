@@ -1,6 +1,7 @@
 package com.example.stackoverflow.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,13 @@ public class MainController {
 	public List<Answer> showAnswer(@PathVariable int qid){
 		return answerRepo.getAnswerById(qid);
 	}
+
+	@GetMapping("/question/{qid}")
+	public Optional<Question> getQsestionById(@PathVariable int qid){
+		return questionRepo.findById(qid);
+	}
+
+	
 	
 
 }
